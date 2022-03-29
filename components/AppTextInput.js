@@ -9,6 +9,8 @@ function AppTextInput({
   width = "100%",
   iconType,
   iconSize = 30,
+  onChangeText,
+  iconColor,
   ...otherProps
 }) {
   return (
@@ -16,12 +18,13 @@ function AppTextInput({
       <AppIcon
         name={iconType}
         size={iconSize}
-        backgroundColor={colors.primary}
+        backgroundColor={iconColor}
         color={colors.white}
       />
       <TextInput
         style={styles.text}
         placeholder={placeholder}
+        onChangeText={onChangeText}
         {...otherProps}
       />
     </View>
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: 25,
     flexDirection: "row",
-    padding: 15,
+    padding: 10,
     marginVertical: 10,
     shadowColor: colors.light,
     shadowOffset: {
